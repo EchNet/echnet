@@ -1,9 +1,22 @@
-default: run
+# Make commands for development
+# 
+# `make run` runs an express dev server, listening on port 3000.
+# `make deploy` copies built files to s3.
 
-.DEFAULT_GOAL: run
+PIP=pip
+PYTHON=python
+NPM=npm
 
-run:
+default: deploy
+
+deploy:
+	aws s3 --profile echnet cp --recursive static s3://ech.net
+
+package-lock.json: package.json
+	$(NPM) install
+
+run: package-lock.json
 	node server.js
 
 clean:
-	rm -rf dist .cache build
+	rm -rf ./deploy
