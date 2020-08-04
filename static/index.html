@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>ech.net</title>
+    <title>James Echmalian | Blog</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -15,21 +15,69 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
     <link rel="manifest" href="img/site.webmanifest">
     <link rel="shortcut icon" href="img/favicon.ico">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya:400,500,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sarabun">
     <link rel="stylesheet" href="/css/site.css">
   </head>
   <body>
-    <div class="outer">
-      <div class="message">
-        <div class="cog">We're busy...</div>
-        <div class="cog">building software artifacts</div>
-        <div class="cog">that enable learning and creating</div>
-        <div class="cog">through shared experience,</div>
-        <div class="cog">and that celebrate our ability</div>
-        <div class="cog">to overcome distance.</div>
+    <header id="header">
+      <div class="headline">James Echmalian</div>
+      <div class="subline">Software Consultant | Mission Owner</div>
+    </header>
+    <section>
+      <div>
+        <em>You</em> are a startup CEO with big ambitions, a problem to solve and limited
+        development resources, maybe a small development team.  You need:
       </div>
-      <div class="subtext">Demos coming soon!</div>
-      <div class="subtext"><a href="https://calendly.com/echmalian/30min">Contact us</a></div>
-    </div>
+      <div>
+        <ul>
+          <li>A <b>technical strategy:</b> build vs. buy, in-house development vs.
+            external contractor, choice of platform and infrastructure, mobile offering.</li>
+          <li>A <b>rockstar-caliber</b> development team.</li>
+          <li>Project leadership: the ability to <b>set goals</b> and <b>meet them</b>
+            on time with high quality.</li>
+        </ul>
+      </div>
+      <div>
+        <em>What I'm about:</em>
+      </div>
+      <div>
+        <ul>
+        <li>A seasoned software development leader,
+          I'll take the time to <b>organize</b> and <b>analyze</b> your
+          problem to determine the best technical strategy.</li>
+        <li>A compassionate, people-first manager, I will maximize your team's
+          productivity through mentorship, a clear set of processes and practices, and
+          most importantly, making them feel valued and listened to by <b>actually
+          valuing them and listening to them.</b></li>
+        <li>A <b>Mission Owner,</b> I will do what it takes to meet our goals.  When that 
+          extra push is needed, I will dive in and write code alongside the team.</li>
+        </ul>
+      </div>
+      <div>
+        If you click on the button below to <b>schedule an 30 minute intro call with me,</b>
+        I will listen to you and assess your needs, and give you my best recommendation,
+        even if it does not necessary mean working together.  If bringing me in makes
+        sense, we'll follow up with a longer, more in-depth session, in which we'll hone
+        your technical strategy.
+      </div>
+    </section>
+    <section>
+      <br/> <br/> <br/> <br/> <br/>
+    </section>
+    <footer>
+      <a href="https://calendly.com/echmalian/30min">
+        <button>Schedule a free intro call</button>
+      </a>
+    </footer>
   </body>
+  <script>
+    window.onscroll = function() {
+      var cutoff = 140;
+      var scrolled = document.body.scrollTop > cutoff || document.documentElement.scrollTop > cutoff;
+      var func = scrolled ? "add" : "remove";
+      console.log(cutoff, scrolled, func)
+      document.querySelector("header").classList[func]("minimized");
+    }
+  </script>
 </html>
