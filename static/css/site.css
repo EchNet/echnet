@@ -9,7 +9,8 @@ html, body {
 }
 body {
   line-height: 1.30;
-  font-family: 'Alegreya', serif;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
   background-color: #efefef;
 }
 header {
@@ -25,7 +26,7 @@ header {
   padding-top: 48px;
   font-size: 36px;
   color: #243464;
-  font-weight: 500;
+  font-weight: 700;
   background-color: white;
   transition: 0.25s;
 }
@@ -34,7 +35,7 @@ header {
   border-bottom: solid 1px #243464;
   text-align: center;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
   color: #888888;
   text-transform: uppercase;
   background-color: white;
@@ -95,7 +96,7 @@ section em {
 }
 section b {
   color: #243464;
-  font-weight: 700;
+  font-weight: 400;
 }
 section li {
   margin-left: 30px;
