@@ -69,11 +69,11 @@
     </div>
     <p>TODOs:
       <ul>
-      <li>Save / restore</li>
       <li>Select and expand a slice</li>
       <li>Text documents for each slice</li>
       <li>Number picker</li>
       <li>Invert labels that are now upside-down.</li>
+      <li>Smooth animation</li>
   </body>
   <script>
     var defaultOptions = {
@@ -233,42 +233,42 @@
         context.restore()
       }
     }
-    var values = []
-    var labels = []
+    var localOptions = JSON.parse(localStorage.getItem("state")) || {
+      values: [null,null,null,null,null,null,null,null],
+      labels: [null,null,null,null,null,null,null,null],
+      baseAngle: defaultOptions.baseAngle
+    }
+    // Animation variables.
     var interval = null;
-    var currentAngle = defaultOptions.baseAngle;
-    var targetAngle = currentAngle; 
+    var currentAngle = localOptions.baseAngle; 
     function draw() {
-      drawIt(Object.assign({}, defaultOptions, { values: values, labels: labels, baseAngle: currentAngle }))
+      drawIt(Object.assign({}, defaultOptions, localOptions, { baseAngle: currentAngle }))
     }
     draw();
     function changeValue(event) {
       var index = parseInt(event.target.getAttribute("data-index"))
-      while (values.length < index + 1) {
-        values.push(null)
-      }
       var newValue = parseInt(event.target.value)
-      values[index] = newValue;
+      localOptions.values[index] = newValue;
       draw();
+      save();
     }
     function changeLabel(event) {
       var index = parseInt(event.target.getAttribute("data-index"))
-      while (labels.length < index + 1) {
-        labels.push(null)
-      }
       var newValue = event.target.value;
-      labels[index] = newValue;
+      localOptions.labels[index] = newValue;
       draw();
+      save();
     }
     function rot(dir) {
-      targetAngle += (2*Math.PI/8) * dir;
+      localOptions.baseAngle += (2*Math.PI/8) * dir;
+      save();
       if (!interval) {
         interval = setInterval(function() {
-          var diff = targetAngle - currentAngle;
-          if (Math.abs(diff) < 0.01) {
+          var diff = localOptions.baseAngle - currentAngle;
+          if (Math.abs(diff) < 0.005) {
             clearInterval(interval);
             interval = null;
-            currentAngle = targetAngle;
+            currentAngle = localOptions.baseAngle;
           }
           else {
             currentAngle += diff * 0.15;
@@ -276,6 +276,10 @@
           draw();
         }, 40);
       }
+    }
+    function save() {
+      localStorage.setItem("state", JSON.stringify(localOptions))
+      console.log('saved')
     }
   </script>
 </html>
