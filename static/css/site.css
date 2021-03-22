@@ -73,6 +73,20 @@ a[href]:hover button {
   color: #243464;
   box-shadow: 0 0 21px 8px white;
 }
+footer a[href] {
+  font-family: Sarabun, Arial, sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+footer a[href]:hover {
+  color: #dde866;
+  text-decoration: underline;
+}
+footer span {
+  color: white;
+}
 section {
   font-size: 18px;
   width: 720px;

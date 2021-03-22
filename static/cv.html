@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>James Echmalian | CV</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="img/site.webmanifest">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sarabun">
+    <link rel="stylesheet" href="/css/site.css">
+  </head>
+  <body>
+    <header id="header">
+      <div class="headline">James Echmalian</div>
+      <div class="subline">Software Technical Advisor</div>
+    </header>
+    <section>
+      <div>
+        A seasoned software development leader, experienced with organizing and analyzing 
+        the problem space to determine the best approach, establishing architecture,
+        managing and mentoring the team, fostering productive processes, collaboration and
+        coding practices.
+      </div>
+      <div>
+        <em>Technical Expertise</em>
+      </div>
+      <div>
+        <ul>
+          <li>Back end development: Django, NodeJS, Rails, other Web platforms.</li>
+          <li>API development: REST, WebSocket, GraphQL.</li>
+          <li>Front end development: ReactJS, jQuery.</li>
+          <li>SQL Databases: modeling, query optimization.</li>
+          <li>DevOps/Deployment: AWS, Heroku, GitHub.</li>
+        </ul>
+      </div>
+      <div>
+        <em>Management Skills</em>
+      </div>
+      <div>
+        <ul>
+          <li>Project management: Scrum, Kanban.</li>
+          <li>CTO / Chief Architect: 3 years.
+          <li>VP of Engineering: 2 years.
+        </ul>
+      </div>
+      <div> <br/> <br/> <br/> <br/> <br/> <br/>
+      </div>
+    </section>
+    <footer>
+      <a href="/">Home</a>
+      <span> ~ </span>
+      <a target="echnet.other" href="https://www.linkedin.com/in/james-echmalian-7578871/">
+        LinkedIn
+      </a>
+      <span> ~ </span>
+      <a target="echnet.other" href="https://github.com/EchNet">GitHub</a>
+    </footer>
+  </body>
+  <script>
+    window.onscroll = function() {
+      var cutoff = 140;
+      var scrolled = document.body.scrollTop > cutoff || document.documentElement.scrollTop > cutoff;
+      var func = scrolled ? "add" : "remove";
+      console.log(cutoff, scrolled, func)
+      document.querySelector("header").classList[func]("minimized");
+    }
+  </script>
+</html>
